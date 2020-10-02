@@ -1,0 +1,123 @@
+//created by Isaac Chan
+{
+	"Sharpness":{
+		"description":"30%dmg multipiler max",
+		"highestLevel":5,
+		"item":["melee","bow","spear"]
+	},
+	"Power":{
+		"description":"Makes swing/charge more powerful, thus dealing more dmg",
+		"highestLevel":5,
+		"item":["melee","bow"]
+	},
+	"Burning":{
+		"description":"Makes the victim burn on fire",
+		"highestLevel":5,
+		"item":"melee"
+	},
+	"Reflection":{
+		"description":"Relflects light to make it hard to see and aim for enemies",
+		"highestLevel":4,
+		"item":"armor"
+	},
+	"Damage Releaser":{
+		"description":"Stores unused energy from each hit/charge/shot to release at once to deal extra damage",
+		"highestLevel":3,
+		"item":["melee","bow","spear","gun"]
+	},
+	"Protection":{
+		"description":"Does a better job at protecting player,though increases xp drop on being slain by other players",
+		"highestLevel":5,
+		"item":"armor"
+	},
+	"Mythicality":{
+		"description":"Enhances all other enchants on the item by 30% max",
+		"highestLevel":3,
+		"item":"mythical"
+	},
+	"Auto-Aiming":{
+		"description":"Auto-aims enemies, having a higher chance of dealing more damage. Note:reduces XP drop",
+		"highestLevel":4,
+		"item":["melee","spear","bow","gun"]
+	},
+	"Player Slayer":{
+		"description":"Adds damage if enemy is another player",
+		"highestLevel":3,
+		"item":["melee","spear","bow","gun"]
+	},
+	"Improved process":{
+		"description":"Speeds up enchants,crafting,brewing,etc.",
+		"highestLevel":5,
+		"item":["brewing table","Enchchating Table","Crafting Table"]
+	},
+	"Simplification":{
+		"description":"Simplifies enchanting process, takes less XP to enchant",
+		"highestLevel":5,
+		"item":"Enchchating Table"
+	},
+	"Gold Rush":{
+		"description":"Increases rarity of items when mining",
+		"highestLevel":5,
+		"item":"pickaxe"
+	},
+	"Accurate North":{
+		"description":"Makes compass more accurate, thus walking the wrong way less often and faster arriving at destination",
+		"highestLevel":5,
+		"item":"compass"
+	},
+	"Thunderjolt":{
+		"description":"Summons lightning at the place where spear lands. Enemy takes lightning damage and 'sound' damage",
+		"highestLevel":3,
+		"item":"spear"
+	},
+	"Barrier Breaking":{
+		"description":"Bullets break sound barrier.Deals more damage and an extra amount of 'sound' damage.",
+		"highestLevel":3,
+		"item":"gun"
+	},
+	"Mass-Energy Transformation":{
+		"description":"Follows E=mc^2, transferring weight of inventory into energy,dealing *_HELL_* damage",
+		"highestLevel":3,
+		"item":["gun","spear","bow","melee"]
+	},
+	"Boss Punch":{
+		"description":"Deals extra damage to bosses",
+		"highestLevel":3,
+		"item":["bow","gun","spear","melee"]
+	},
+	"Speed Summoning":{
+		"description":"Speeds up summoning of items in minions",
+		"highestLevel":5,
+		"item":"minion"
+	},
+	"Item Teleportation":{
+		"description":"Minion output goes straight to inventory",
+		"highestLevel":1,
+		"item":"minion"
+	},
+	"Critical-Damage Tradeoff":{
+		"description":"-50% chance of a crit, +50% damage",
+		"highestLevel":5,
+		"item":["melee","bow","gun","spear"]
+	},
+	"Pythons' Poison":{
+		"description":"Poisons enemy, deals 10 damage each 5 secs for 10 times, disables 10% of their defense",
+		"highestLevel":5,
+		"item":["melee","bow","gun","spear"],
+	},
+	"Restlessness":{
+		"description":"Minion takes longer to stop grinding",
+		"highestLevel":5,
+		"item":"minion"
+	},
+	"Jeepers' Jump":{
+		"description":"Must be applied to current sword AND armor. Takes energy off boosted jump, adds dmg. Player takes fall damage each time used.",
+		"highestLevel":3,
+		"item":["sword","armor"]
+	},
+	"No, you!":{
+		"description":"Reflects some damage to enemies",
+		"highestLevel":3,
+		"item":"armor"
+	}
+}

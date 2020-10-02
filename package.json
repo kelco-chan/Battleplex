@@ -1,0 +1,23 @@
+{
+  "name": "Battleplex",
+  "version": "0.0.0",
+  "description": "A text adventure game based, a hybrid between Dank Memer and DiscordRPG",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "Dank Kelvin",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "lodash.clonedeep": "^4.5.0",
+    "mongoose": "^5.9.23"
+  }
+}

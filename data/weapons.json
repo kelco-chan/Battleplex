@@ -1,0 +1,137 @@
+
+[
+	{
+		"name":"Wooden Clubber",
+		"price":1,
+		"description":"Much improve. So amaze. Wow. Created by Doge Inc.",
+		"dmg":1.5,
+		"crit":100
+	},
+  {
+    "name":"Vampire Mouth",
+    "price":20,
+    "description":"They steal your blood.Cweepy...",
+    "dmg":10,
+    "crit":0
+  },
+  {
+    "name":"Vampire Fang",
+    "price":3,
+    "description":"This may or may not be a weapon. It may or may not be fatal. Use at one's own risk.",
+    "dmg":-10,
+    "crit":100
+  },
+	{
+		"name":"Studded Club",
+		"price":5,
+		"description":"A heavy studded club built for smashing enemies heads in",
+		"dmg":5,
+		"crit":57
+	},
+	{
+		"name":"Flint Headed Spear",
+		"price":7,
+		"description":"A hefty spear that has a chance to break on use ",
+		"dmg":20,
+		"crit":20
+	},
+	{
+		"name":"Spiked Club",
+		"price":15,
+		"description":"A large club with dangerous looking metal spikes",
+		"dmg":15,
+		"crit":40
+	},
+	{
+		"name":"Metal Tipped spear",
+		"price":45,
+		"description":"A reliable heavy spear",
+		"dmg":40,
+		"crit":15
+	},
+	{
+		"name":"Metal Pike",
+		"price":85,
+		"description":"A very strudy and Dangerous weapon",
+		"dmg":65,
+		"crit":15
+	},
+	{
+		"name":"Axe",
+		"price":100,
+		"description":"When they deal more damage than a sword...",
+		"dmg":70,
+		"crit":99.99
+	},
+	{
+		"name":"Flint hatchet",
+		"price":7,
+		"description":"A primitive flint hatchet",
+		"dmg":5,
+		"crit":90
+	},
+	{
+		"name":"Heavy Battleaxe",
+		"price":300,
+		"description":"The ultimate tool for destruction",
+		"dmg":215,
+		"crit":12
+	},
+  {"name":"Fishing Rod"},
+	{
+		"name":"Broadsword",
+		"price":350,
+		"description":"One of the sharpest blades on the market. Not to mention the Largest",
+		"dmg":220,
+		"crit":40
+	},
+	{
+		"name":"Heavy Taser",
+		"price":600,
+		"description":"A heavy tazer used by police officers that has a chance to do high damage",
+		"dmg":400,
+		"crit":15
+	},
+	{
+		"name":"Assault Rifle",
+		"price":1000,
+		"description":"The fastest way to fill a target with holes",
+		"dmg":400,
+		"crit":25
+	},
+	{
+		"name":"Doge and Co’s Advanced Sniper",
+		"price":1500,
+		"description":"Much damage. Very bullets. Such power. Wow.",
+		"dmg":400,
+		"crit":50
+	},
+	{
+		"name":"Myth Broadsword Surmabrander",
+		"price":10000,
+		"description":"A legendary sword that may have been wrestled from the Viking god Frey... Let me just remove this made in USA sticker",
+		"dmg":1000,
+		"crit":80
+	},
+	{
+		"name":"Myth Warhammer Mjolnir",
+		"price":12000,
+		"description":"A US knockoff of Thor’s hammer...",
+		"dmg":1400,
+		"crit":50
+	},
+	{
+		"name":"Myth Spear Gungnir",
+		"price":12000,
+		"description":"Yet another US knockoff of a Viking weapon... what is it with these Americans!!!!!!!!!!!$^%@$%#%^@#$%#@!",
+		"dmg":1200,
+		"crit":70
+	},
+	{
+		"name":"Mycril Spear",
+		"price":10000,
+		"description":"Made in terraia",
+		"dmg":1000,
+		"crit":70
+	}
+]
