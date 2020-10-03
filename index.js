@@ -133,7 +133,7 @@ bot.add("dance",async function(msg,args,player){
 	return "You have improved your cardiovascular fitness and thus you have returned to full health."
 },middleware)
 */
-
+c.show("Token",BOT_TOKEN)
 bot.login(BOT_TOKEN);
 
 //loop Codes
