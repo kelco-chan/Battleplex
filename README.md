@@ -2,6 +2,7 @@
 A prototype battle bot
 created by liam, eason, kelvin and isaac.
 
+This project is now hosted on repl.it!
 
 Dev's Documentation:
 - index.js contains  all of the MAIN BOT CODE
