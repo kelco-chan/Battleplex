@@ -1,5 +1,5 @@
 # Battleplex
-A prototype battle bot
+A prototype battle bot [![Run on Repl.it](https://repl.it/badge/github/kelco-chan/Battleplex)](https://repl.it/github/kelco-chan/Battleplex)
 created by liam, eason, kelvin and isaac.
 
 
