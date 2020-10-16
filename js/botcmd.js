@@ -1,5 +1,6 @@
 //init discord and pg sql ** ADD THE PROCESS ENV VARS**
 const deepclone=require("lodash.clonedeep");
+const c= require("./assets/console.js")
 const discord=require("discord.js");
 class Bot {
 	constructor(prefix){

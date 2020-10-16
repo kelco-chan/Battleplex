@@ -13,12 +13,12 @@ class Item{
         this.number=number;
     }
     details(){
-        var str=`Item: ${this.name} \n Price: ${this.price} `;
+        var str=`Item: ${this.name} \nPrice: ${this.price} `;
         if(this.number){
             str+=`\nAmount: ${this.number}`
         }
         if(this.description){
-            str+=`\n ${this.description}`;
+            str+=`\n${this.description}`;
         }
         return str;
     }
@@ -26,6 +26,7 @@ class Item{
         this.name=obj.name;
         this.price=obj.price;
         this.description=obj.description;
+        this.number=obj.number;
     }
 }
 class Weapon extends Item{
@@ -41,8 +42,8 @@ class Weapon extends Item{
     }
     details(){
         var str=super.details();
-        str+=`\n Damage: ${this.dmg}\n `
-        str+=`Critical: ${this.crit}% \n`
+        str+=`\nDamage: ${this.dmg}`
+        str+=`\nCritical: ${this.crit}%`
         return str;
     }
 }
@@ -57,7 +58,7 @@ class Armour extends Item{
     }
     details(){
         var str=super.details();
-        str+=`Protection: ${this.prot} \n`
+        str+=`\nProtection: ${this.prot}`
         return str;
     }
 }
@@ -142,6 +143,16 @@ class Shop{
             number:real.number,
         }
     }
+    listLoot(lootTable){
+        var lootList=lootTable.map(function(item){
+            if(item.number == 0){
+                return "";
+            }
+            return `${item.name} x${item.number}`+"\n";
+        })
+        c.show("lootList",lootList);
+        return lootList.join("")
+    }
 }
 var demo=new Shop();
 demo.parseWeapons(require("../data/weapons.json"));
@@ -180,6 +191,9 @@ class Inventory{
         return true;
     }
     invAdd(itemname,num){
+        if(num===0){
+            return;
+        }
         var number=parseInt(num);
         for (var i=0;i<this.inv.length;i++){
             if(this.inv[i].name===itemname){

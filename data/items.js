@@ -27,6 +27,17 @@ module.exports=[
     name:"Axe",
     price:15,
     description:"You use this to chop trees"
+  },{
+      name:"Dragon's Scale",
+      price:1000,
+      prot:50,
+      description:"This is found on the backs of dragon. Lots of dragons were killed in the making of ths armour"
+  },{
+      name:"Dragon's Fang",
+      price:10000000,
+      description:"The dragon attacks you in this way",
+      dmg:100,
+      crit:50
   }
   
 ]

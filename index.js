@@ -19,8 +19,6 @@ mongoose.connect(process.env.URI, {useNewUrlParser: true,useUnifiedTopology: tru
 mongoose.connection.on("error",function(e){
   console.warn(e);
 });
-
-
 var ctx={
   shop:shop,
   locations:locations,
@@ -124,16 +122,7 @@ bot.add("reset",async function(msg,args){
 	if(player.invGet(itemname)&&player.invGet(itemname)>=args[amountIndex]){}
 	else return 
 },middleware);
-
-
-
-bot.add("dance",async function(msg,args,player){
-	if(!locations[player.location].allows("dance")) return "Only noobs can dance properly. Go to Noob's Rock"
-	player.stats.hp=player.stats.maxhp
-	return "You have improved your cardiovascular fitness and thus you have returned to full health."
-},middleware)
 */
-c.show("Token",BOT_TOKEN)
 bot.login(BOT_TOKEN);
 
 //loop Codes

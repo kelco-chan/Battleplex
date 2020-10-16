@@ -46,10 +46,10 @@ class Entity extends items.Inventory {
     this.stats.hp=m.to(this.stats.hp,1)
   }
 	dealDamage(){
-    if(Date.now()<this._actionCooldown.attack){
-      c.show("cooldown error")
-      return {error:"COOLDOWN NOT DONE YET"};
-    }
+        if(Date.now()<this._actionCooldown.attack){
+            c.show("cooldown error")
+            return {error:"COOLDOWN NOT DONE YET"};
+        }
 		this.updateStats();
 		var dmg = this.stats.dmg || this.weapon.dmg;
 		if(Math.random()<(this.stats.crit/100)){
@@ -57,16 +57,15 @@ class Entity extends items.Inventory {
 		}
 		dmg*=Math.to(Math.min(1,Math.pow(2.4,(this.stats.hp/this.stats.maxhp))-1),2);
 		//damage is multiplied by (2.4^percent health remaining) -1; ** ROUNDED DOWN WHEN > 1
-    this._actionCooldown.attack=Date.now()+this._actionInterval.attack;
+        this._actionCooldown.attack=Date.now()+this._actionInterval.attack;
 		return m.to(dmg,1);
 	}
 	takeDamage(dmg){
-    c.show("entity",this)
 		this.updateStats();
 		dmg*=(1-(this.stats.prot/100));
-    var realDmg=Math.abs(Math.to(dmg,1))
+        var realDmg=Math.abs(Math.to(dmg,1))
 		this.stats.hp-=realDmg;
-    this.roundHp();
+        this.roundHp();
 	}
 	updateStats(){
 		var temp=this.stats.hp/this.stats.maxhp;
@@ -74,33 +73,30 @@ class Entity extends items.Inventory {
 		this.stats={hp:this.stats.hp,maxhp:this.stats.maxhp,crit:0,dmg:10,prot:0.05}
     
 		//update stats by weapon
-    var weapon=i.itemify(this.weapon);
+        var weapon=i.itemify(this.weapon);
 		this.stats.dmg=weapon.dmg;
 		this.stats.crit=weapon.crit;
 		//update stats by armour
-    var armour={};
+        var armour={};
 		if(this.armour){
-      armour=i.itemify(this.armour);
-			this.stats.prot=armour.prot;
+            armour=i.itemify(this.armour);
+	        this.stats.prot=armour.prot;
 			if(armour.hp){
 				this.stats.maxhp+=armour.hp;
 			}
 		}
-    this.stats.hp=temp*this.stats.maxhp
+        this.stats.hp=temp*this.stats.maxhp
 	}
-  from(obj){
-    var temp={};
-    super.from(obj)
-    this.effects=obj.effects;
-    this.stats=obj.stats;
-    this.weapon={name:obj.weapon.name,number:1}
-    this.armour={name:obj.armour.name,number:1};
-
-    this.location=obj.location;
-
-    this.id=obj.id;
-    
-  }
+    from(obj){
+        var temp={};
+        super.from(obj)
+        this.effects=obj.effects;
+        this.stats=obj.stats;
+        this.weapon={name:obj.weapon.name,number:1}
+        this.armour={name:obj.armour.name,number:1};
+        this.location=obj.location;
+        this.id=obj.id;
+    }
 }
 
 class Player extends Entity	{
@@ -159,13 +155,29 @@ class Player extends Entity	{
 }
 // Mobs
 class Hostile extends Entity{
-	constructor(hp=2,weapon={name:"Wooden Clubber",number:1},armour={name:"Your Skin",number:1},loot=[{name:"Gold Ingot", high:5,low:5}],cooldown=1000*5){
+	/*constructor(hp=2,weapon={name:"Wooden Clubber",number:1},armour={name:"Your Skin",number:1},loot=[{name:"Gold Ingot", high:5,low:5}],cooldown=1000*5)*/
+    constructor(hp,weapon,armour,loot,cooldown){
 		super([],[],{hp:hp, maxhp:hp,crit:0,dmg:1,prot:0},weapon,armour);
-		this.agro=false;
-		this.cooldown=10*1000;
+        this.agro=false;
+        if(hp.hp){
+            //the constructor passes and object;
+            this.cooldown = hp.cooldown;
+            this.name=hp.name;
+            this.stats.hp=hp.hp;
+            this.stats.maxhp=hp.hp;
+            this.weapon=hp.weapon;
+            this.armour=hp.armour;
+            this.loot=hp.loot;
+            this.updateStats();
+            return;
+        }
+		
+		this.cooldown=cooldown;
 		this.nextAttack=Date.now()+this.cooldown;
-    this.hostile=true;
-    this.loot=loot;
+        this.hostile=true;
+        this.loot=loot;
+        
+        c.show("Init hostile",this)
 	}
 	ai(){
 		if(this.agro){

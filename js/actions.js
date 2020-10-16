@@ -96,7 +96,6 @@ actions.reset=new Action("Player",function(ctx,args){
     };
 })
 actions.attack=new Action("Player",function (ctx){
-    c.show("actions.attack",this)
     var location=ctx.locations[this.location];
     var dmg;
     if(location.allows('attack')){
@@ -112,9 +111,10 @@ actions.attack=new Action("Player",function (ctx){
         this.takeDamage(this._agro.dealDamage());
         if(this._agro.stats.hp<=0){
             //it is dead
-            this.loot(this._agro.dropLoot())
+            var loot=this._agro.dropLoot()
+            this.loot(loot)
             
-            return `Your enemy has died and you got some loot`;
+            return `Your enemy ${this._agro.name} and you got : \n\`\`\`${ctx.shop.listLoot(loot)}\`\`\``;
         }
         var enemyHp=m.to(this._agro.stats.hp,1);
         var enemyMax=m.to(this._agro.stats.maxhp,1)
