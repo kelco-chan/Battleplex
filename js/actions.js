@@ -108,13 +108,14 @@ actions.attack=new Action("Player",function (ctx){
             return `Oi. Wait for ur cooldown in ${(this._actionCooldown.attack-Date.now())/1000} seconds`;
         }
         this._agro.takeDamage(dmg,this);
-        this.takeDamage(this._agro.dealDamage());
+        var dmgTaken=this._agro.dealDamage()
+        this.takeDamage(dmgTaken);
         if(this._agro.stats.hp<=0){
             //it is dead
             var loot=this._agro.dropLoot()
             this.loot(loot)
             
-            return `Your enemy ${this._agro.name} and you got : \n\`\`\`${ctx.shop.listLoot(loot)}\`\`\``;
+            return `Your enemy ${this._agro.name} died and you got : \n\`\`\`${ctx.shop.listLoot(loot)}\`\`\`You have ${this.stats.hp}/${this.stats.maxhp} hp left`;
         }
         var enemyHp=m.to(this._agro.stats.hp,1);
         var enemyMax=m.to(this._agro.stats.maxhp,1)

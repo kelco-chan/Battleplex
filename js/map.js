@@ -11,7 +11,7 @@ class Location{
 		this.name=name;
 		this.cmd=cmd//list
         this.entities=[];
-        this.entities.mobs=mobs;
+        this.mobs=mobs;
         /*
         Mobs are spawn with decimal chance.
         i.e.
@@ -53,11 +53,12 @@ class Location{
         }
     }
     pickMob(){
+        var mobName=m.chooseWeighted(this.mobs).name;
+        c.show("mob",mobs)
+        var mobType=mobs[mobName];
 
-        var mobName=m.chooseWeighted(this.mobs)
-        var mobType=mobs[this.entities.mobName];
         if(!mobType){
-            mobType=mobs["Vampire"];
+            c.show("NO MOB")
         }
         this.gc();
         for(var i=0;i<this.entities.length;i++){
@@ -77,8 +78,23 @@ var locations={};
 locations.Forest = new Location("Forest",["chop","forage"]);
 locations.Pond = new Location("Pond",["fish"]);
 locations.Market = new Location("Market",["trade","sell","buy"]);
-locations.Cemetry = new Location("Cemetry",["attack"]);
-locations["Dragon's Nest"] = new Location("Dragon's Nest",["summon","attack"],"Dragon");
+locations.Cemetry = new Location("Cemetry",["attack"],[
+    {
+        name:"Undead Zombie",
+        chance:0.5
+    },
+    {
+        name:"Vampire",
+        chance:0.5
+    }
+    
+]);
+locations["Dragon's Nest"] = new Location("Dragon's Nest",["summon","attack"],[
+    {
+        name:"Dragon",
+        chance:1
+    }
+]);
 locations["Noob's Rock"]=new Location("Noob's Rock",["dance","attack"])
 module.exports=function(){
   return deepclone(locations);

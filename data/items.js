@@ -38,6 +38,12 @@ module.exports=[
       description:"The dragon attacks you in this way",
       dmg:100,
       crit:50
+  },{
+      name:"Zombie Fist",
+      price:1000,
+      description:"TRASH AF",
+      dmg:20,
+      crit:10
   }
   
 ]

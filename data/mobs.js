@@ -50,6 +50,26 @@ var mobData=[
                 high:13000
             }
         ]
+    },
+    {
+        name:"Undead Zombie",
+        hp:50,
+        cooldown:1000,
+        weapon:{
+            name:"Zombie Fist",
+            number:1
+        },
+        armour:{
+            name:"Your Skin",
+            number:1
+        },
+        loot:[
+            {
+                name:"Gold Ingot",
+                low:16,
+                high:30
+            }
+        ]
     }
 ];
 class Vampire extends e.Hostile{
@@ -62,7 +82,13 @@ class Dragon extends e.Hostile{
         super(mobData[1]);
     }
 }
+class UndeadZombie extends e.Hostile{
+    constructor(){
+        super(mobData[2]);
+    }
+}
 module.exports={
     Vampire: Vampire,
-    Dragon: Dragon
+    Dragon: Dragon,
+    "Undead Zombie":UndeadZombie
 }
